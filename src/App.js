@@ -70,20 +70,26 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <p>Authentic Italian cuisine. 6 creative dishes to choose from. All from our stone oven, all organic, all delicious.</p>
 
       {pizzaLen > 0 ? (
-        <ul className="pizzas">
-          {pizzas.map((pizza, idx) => (
-            <Pizza
-              key={idx}
-              name={pizza.name}
-              photoName={pizza.photoName}
-              price={pizza.price}
-              ingredients={pizza.ingredients}
-            />
-          ))}
-        </ul>
+        <>
+          <p>
+            Authentic Italian cuisine. 6 creative dishes to choose from. All
+            from our stone oven, all organic, all delicious.
+          </p>
+
+          <ul className="pizzas">
+            {pizzas.map((pizza, idx) => (
+              <Pizza
+                key={idx}
+                name={pizza.name}
+                photoName={pizza.photoName}
+                price={pizza.price}
+                ingredients={pizza.ingredients}
+              />
+            ))}
+          </ul>
+        </>
       ) : (
         <p>We're still working on menu. Please come back later.</p>
       )}
