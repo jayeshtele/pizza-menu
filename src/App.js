@@ -65,14 +65,15 @@ function Header() {
 
 function Menu() {
   const pizzas = pizzaData;
+  const pizzaLen = pizzas.length;
 
   return (
     <main className="menu">
       <h2>Our Menu</h2>
 
-      {pizzas && (
+      {pizzaLen > 0 && (
         <ul className="pizzas">
-          {pizzaData.map((pizza, idx) => (
+          {pizzas.map((pizza, idx) => (
             <Pizza
               key={idx}
               name={pizza.name}
@@ -83,7 +84,6 @@ function Menu() {
           ))}
         </ul>
       )}
-      
     </main>
   );
 }
