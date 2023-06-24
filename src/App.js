@@ -86,6 +86,7 @@ function Menu() {
                 photoName={pizza.photoName}
                 price={pizza.price}
                 ingredients={pizza.ingredients}
+                soldOut={pizza.soldOut}
               />
             ))}
           </ul>
@@ -127,14 +128,14 @@ function Footer() {
   );
 }
 
-function Pizza({ name, photoName, price, ingredients }) {
+function Pizza({ name, photoName, price, ingredients, soldOut }) {
   return (
-    <li className="pizza">
+    <li className={`pizza ${soldOut ? "sold-out" : ""}`}>
       <img src={photoName} alt={name} />
       <div>
         <h3>{name}</h3>
         <p>{ingredients}</p>
-        <span>{price + 3}</span>
+        <span>{soldOut ? "Sold Out" : price + 3}</span>
       </div>
     </li>
   );
