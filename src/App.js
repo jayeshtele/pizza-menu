@@ -113,21 +113,21 @@ function Footer() {
         </div>
       ) : (
         <p>
-          We're happy to Welcome between {openHours}:00 and {closeHours}:00.
+          We're happy to Welcome you between {openHours}:00 and {closeHours}:00.
         </p>
       )}
     </footer>
   );
 }
 
-function Pizza(props) {
+function Pizza({ name, photoName, price, ingredients }) {
   return (
     <li className="pizza">
-      <img src={props.photoName} alt={props.name} />
+      <img src={photoName} alt={name} />
       <div>
-        <h3>{props.name}</h3>
-        <p>{props.ingredients}</p>
-        <span>{props.price + 3}</span>
+        <h3>{name}</h3>
+        <p>{ingredients}</p>
+        <span>{price + 3}</span>
       </div>
     </li>
   );
